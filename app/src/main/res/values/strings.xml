@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyXHeroCard</string>
+    <string name="login_label">Login</string>
+
+    <string name="notification_title">New card added to the favorites!</string>
+    <string name="card_artist_label">Card artist</string>
+    <string name="flavor_text_label">Flavor text</string>
+
+</resources>

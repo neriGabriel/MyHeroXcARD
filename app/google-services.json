@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "39325075763",
+    "project_id": "myxherocard",
+    "storage_bucket": "myxherocard.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39325075763:android:efb58ba50f1d65054f9646",
+        "android_client_info": {
+          "package_name": "com.example.myxherocard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39325075763-5944nrioic4b60lecea2l3vahihk2ebf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myxherocard",
+            "certificate_hash": "c09c25d72ae690d07aa86f419e3e37c10260e696"
+          }
+        },
+        {
+          "client_id": "39325075763-o34be68n1jrhlatsu7kh82oh3bdlq39q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWOXAIYQS6EItXNarkXHtXEamnBiRUmuI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "39325075763-o34be68n1jrhlatsu7kh82oh3bdlq39q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
