@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.myxherocard.R
 import com.example.myxherocard.databinding.FragmentHomeBinding
 import com.example.myxherocard.utils.sendNotification
@@ -58,10 +59,12 @@ class HomeFragment : Fragment() {
             }
         )
         binding.recycler.layoutManager = LinearLayoutManager(context)
+        adapter.stateRestorationPolicy = RecyclerView.Adapter.StateRestorationPolicy.PREVENT
         binding.recycler.adapter = adapter
 
         cardsViewModel.cards.observe(viewLifecycleOwner) {
-            adapter.submitList(it)
+            adapter.setData(it)
+            adapter.notifyDataSetChanged()
         }
     }
 

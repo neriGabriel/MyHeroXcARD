@@ -56,7 +56,8 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         (requireActivity() as AppCompatActivity).supportActionBar?.hide()
         binding.login.setOnClickListener {
-            doLogin()
+            findNavController().navigate(LoginFragmentDirections
+                .actionLoginFragmentToHomeFragment())
         }
     }
 

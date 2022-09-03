@@ -10,15 +10,6 @@ class CardsViewModel(private val cardsRepository: CardsRepository): ViewModel() 
     val cards: LiveData<List<Card>>
         get() = cardsRepository.cards
 
-    init {
-        refreshCards()
-    }
-
-    private fun refreshCards() {
-        viewModelScope.launch {
-            cardsRepository.getAllCards()
-        }
-    }
 
     fun updateFavorite(card: Card) {
         viewModelScope.launch {

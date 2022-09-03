@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/certificacao_android/MyXHeroCard/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.196" />
+        <entry key="..\:/certificacao_android/MyXHeroCard/app/src/main/res/drawable/ic_launcher_background.xml" value="0.196" />
         <entry key="..\:/certificacao_android/MyXHeroCard/app/src/main/res/drawable/ic_start_off.xml" value="0.3405" />
         <entry key="..\:/certificacao_android/MyXHeroCard/app/src/main/res/drawable/pill_button.xml" value="0.2095" />
         <entry key="..\:/certificacao_android/MyXHeroCard/app/src/main/res/layout/activity_main.xml" value="0.33" />

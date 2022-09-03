@@ -14,18 +14,10 @@ import com.example.myxherocard.model.Card
 
 class CardListAdapter(val cardClickListener: AdapterClickListener,
                       val cardFavoriteClickListener: AdapterClickListener)
-    : ListAdapter<Card, CardListAdapter.CardViewHolder>(DiffCallback) {
+    : RecyclerView.Adapter<CardListAdapter.CardViewHolder>() {
 
-    companion object DiffCallback : DiffUtil.ItemCallback<Card>() {
-        override fun areItemsTheSame(oldItem: Card, newItem: Card): Boolean {
-            return oldItem === newItem
-        }
+    private var data: List<Card> = arrayListOf()
 
-        override fun areContentsTheSame(oldItem: Card, newItem: Card): Boolean {
-            return oldItem.id == newItem.id
-        }
-
-    }
     inner class CardViewHolder(val binding: CardItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     class AdapterClickListener (val clickListener: (card: Card) -> Unit ) {
@@ -40,7 +32,7 @@ class CardListAdapter(val cardClickListener: AdapterClickListener,
     }
 
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
-        val currentCard = getItem(position)
+        val currentCard = data[position]
         holder.binding.card = currentCard
         holder.binding.cardHeader.setOnClickListener {
             cardClickListener.onClick(currentCard)
@@ -58,9 +50,16 @@ class CardListAdapter(val cardClickListener: AdapterClickListener,
 
         Glide.with(holder.itemView.context)
             .load(currentCard.cropImage)
-            .error(R.drawable.ic_launcher_foreground)
+            .error(R.drawable.ic_baseline_error_24)
             .apply(RequestOptions().centerCrop())
+            .placeholder(R.drawable.ic_launcher_foreground)
             .into(holder.binding.cardHeader)
+    }
+
+    override fun getItemCount() = data.size
+
+    fun setData(newData: List<Card>) {
+        data = newData
     }
 
 }
