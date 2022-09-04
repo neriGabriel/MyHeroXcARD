@@ -37,8 +37,9 @@ class CardsRepository(private val database: CardDatabase, private val cardServic
     suspend fun getAllCards() {
         withContext(Dispatchers.IO) {
             try {
-                val cards = cardService.getAllCards().cards
-                database.cardDAO.insert(cards.asDatabaseModel())
+                val newCards = cardService.getAllCards().cards
+                val insertCards = database.cardDAO.insert(newCards.asDatabaseModel())
+                Log.d(TAG, "insert the following cards: $insertCards")
             } catch (error: Exception) {
                 Log.w(TAG, "Erro while getting all cards ${error.message}")
             }

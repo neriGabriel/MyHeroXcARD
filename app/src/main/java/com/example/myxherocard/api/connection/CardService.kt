@@ -8,7 +8,7 @@ interface CardService {
     @GET("cards")
     suspend fun getAllCards(
         @Query("locale") locale: String = "en_US",
-        @Query("access_token") accessToken: String = "USjp4VHuEOtX2f31fnPXmx3Iezgnv3xEZ0"
+        @Query("access_token") accessToken: String = "US1Hh42dStV3Pgw5XpBfA8ZkN6U6v548hF"
     ): Cards
 
 }

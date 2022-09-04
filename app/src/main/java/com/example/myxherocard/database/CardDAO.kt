@@ -10,7 +10,7 @@ interface CardDAO {
     fun getCards(): LiveData<List<DatabaseCard>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(cards: List<DatabaseCard>)
+    fun insert(cards: List<DatabaseCard>): List<Long>
 
     @Update
     fun update(card: DatabaseCard)
