@@ -1,5 +1,6 @@
 package com.example.myxherocard.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.*
 import com.example.myxherocard.model.Card
 import com.example.myxherocard.repository.CardsRepository
@@ -10,10 +11,10 @@ class CardsViewModel(private val cardsRepository: CardsRepository): ViewModel() 
     val cards: LiveData<List<Card>>
         get() = cardsRepository.cards
 
-
     fun updateFavorite(card: Card) {
         viewModelScope.launch {
             cardsRepository.updateFavoriteByCard(card)
         }
     }
+
 }

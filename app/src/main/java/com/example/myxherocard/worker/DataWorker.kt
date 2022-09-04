@@ -13,7 +13,7 @@ class DataWorker(context: Context, params: WorkerParameters): CoroutineWorker(co
 
     companion object {
         const val WORK_ID = "DatabaseDataRefreshWorker"
-        private val TAG = DataWorker::class.simpleName
+        private val TAG = "DataWorker"
     }
 
     override suspend fun doWork(): Result {

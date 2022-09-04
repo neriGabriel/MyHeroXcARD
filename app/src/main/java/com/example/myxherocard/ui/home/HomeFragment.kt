@@ -24,7 +24,6 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
 
     private val cardsViewModel : CardsViewModel by viewModel()
-    private val userViewModel : UserViewModel by viewModel()
 
     private lateinit var adapter: CardListAdapter
 
@@ -37,7 +36,6 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
-
         return binding.root
     }
 
@@ -63,8 +61,22 @@ class HomeFragment : Fragment() {
         binding.recycler.adapter = adapter
 
         cardsViewModel.cards.observe(viewLifecycleOwner) {
+            updateUIState(!it.isEmpty())
+
             adapter.setData(it)
             adapter.notifyDataSetChanged()
+        }
+    }
+
+    private fun updateUIState(isDataLoaded: Boolean) {
+        if(isDataLoaded) {
+             Log.d(TAG, "Data was successfully loaded")
+             binding.recycler.visibility = View.VISIBLE
+             binding.errorLabel.visibility = View.INVISIBLE
+        } else {
+            Log.d(TAG, "Data was not successfully loaded")
+            binding.recycler.visibility = View.INVISIBLE
+            binding.errorLabel.visibility = View.VISIBLE
         }
     }
 
